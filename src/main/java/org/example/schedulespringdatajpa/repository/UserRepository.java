@@ -1,4 +1,8 @@
 package org.example.schedulespringdatajpa.repository;
 
-public class UserRepository {
+import org.example.schedulespringdatajpa.domain.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    boolean existsByEmail(String email);
 }
